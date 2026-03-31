@@ -11,9 +11,9 @@ class Solution {
             return;
         }
         for (int i = start; i <= n; i++) {
-            current.add(i);                 // pick
+            current.add(i); // pick
             backtrack(i + 1, n, k, current, result); // go deeper
-            current.remove(current.size() - 1);       // undo (backtrack)
+            current.remove(current.size() - 1);    // undo (backtrack)
         }
     }
 }
