@@ -24,8 +24,7 @@ class Solution {
 
     }
     public int height(TreeNode node){
-        if (node==null)
-        return 0;
+        if (node==null)return 0;     
         int leftdepth =height(node.left);
         int rightdepth =height(node.right);
         return Math.max(leftdepth,rightdepth)+1;
