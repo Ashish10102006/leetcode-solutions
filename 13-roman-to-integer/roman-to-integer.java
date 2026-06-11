@@ -7,23 +7,26 @@ class Solution {
             'L', 50, 'C', 100, 'D', 500, 'M', 1000
         );
 
-        int total = 0;
-        int prevValue = 0;
+           int result = 0;
 
-        // Traverse from right to left
-        for (int i = s.length() - 1; i >= 0; i--) {
-            int currentValue = romanMap.get(s.charAt(i));
-            if (currentValue < prevValue) {
-                total -= currentValue;  // subtract if smaller than previous
+        for (int i = 0; i < s.length(); i++) 
+        {
+            int current = romanMap.get(s.charAt(i));
+
+            if (i < s.length() - 1 &&
+                current < romanMap.get(s.charAt(i + 1))) {
+                result -= current;
             } else {
-                total += currentValue;  // otherwise add
+                result += current;
             }
-            prevValue = currentValue;
         }
 
-        return total;
+        return result;
     }
-}
+
+    }
+
+
 // Pattern to Remember
 
 // Scan from left to right.
