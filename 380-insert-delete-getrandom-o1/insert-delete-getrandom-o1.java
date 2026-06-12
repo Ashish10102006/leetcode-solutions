@@ -29,6 +29,9 @@ class RandomizedSet {
         // Move last element to deleted position
         list.set(index, last);
         map.put(last, index);
+        // 1. Take the last element of the array.
+        // 2. Put that last element in the position of the element you want to remove.
+        // 3. Delete the last element (the duplicate).
 
         // Remove last element
         list.remove(list.size() - 1);
