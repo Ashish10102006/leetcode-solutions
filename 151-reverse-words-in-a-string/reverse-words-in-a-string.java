@@ -10,3 +10,19 @@ class Solution {
         return sb.toString();
     }
 }
+// "\\s+"
+
+// the \s means whitespace.
+
+// Whitespace includes:
+
+// normal space: " "
+// tab: \t
+// new line: \n
+// s.split("\\s+")
+
+// means:
+
+// Split the string wherever there are one or more whitespace characters.
+
+// The + means one or more.
