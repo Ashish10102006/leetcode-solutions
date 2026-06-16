@@ -42,7 +42,6 @@
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
-        
         for (String word : strs) {
             // Sort the characters of the word to form the key
             char[] chars = word.toCharArray();
