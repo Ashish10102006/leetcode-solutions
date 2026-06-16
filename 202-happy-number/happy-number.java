@@ -44,3 +44,4 @@ class Solution {
         }
     }   
 }
+// Keep generating the sum of squares of digits. If you reach 1, it's happy. If a number repeats, you're in a cycle, so it's not happy.
