@@ -45,3 +45,5 @@ class Solution {
         return longest;
     }
 }    
+
+// Put all numbers in a HashSet, and whenever a number has no previous number (num - 1), treat it as the start of a sequence and count forward to find the longest streak.
