@@ -1,3 +1,7 @@
+// Memory trick
+// Merge Intervals → "Who starts first?" → sort by start
+// Maximum non-overlapping intervals / Activity Selection → "Who finishes first?" → sort by end
+
 import java.util.*;
 
 class Solution {
