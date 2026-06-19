@@ -23,3 +23,16 @@ class Solution {
         return ans;
     }
 }
+// 1. If n is even
+// xⁿ = (xⁿ⁄²)²
+// Example:
+// 2¹⁰ = (2⁵)²
+//      = 32²
+//      = 1024
+
+// 2. If n is odd
+// xⁿ = x × xⁿ⁻¹
+// Example:
+// 2⁵ = 2 × 2⁴
+// Then:
+// 2⁴ = (2²)²
