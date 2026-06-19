@@ -36,3 +36,11 @@ class Solution {
 // 2⁵ = 2 × 2⁴
 // Then:
 // 2⁴ = (2²)²
+
+
+// The reason for:
+// x *= x;
+// N /= 2;
+// comes from this math identity:
+// xⁿ = (x²)ⁿ⁄²
+// when n is even.
