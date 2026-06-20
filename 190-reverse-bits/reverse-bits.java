@@ -64,3 +64,4 @@
         return result;
     }
 }
+// Take LSB → move it to its reverse position → OR into result.
