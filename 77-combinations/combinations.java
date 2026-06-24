@@ -1,3 +1,6 @@
+// “Pick a number, then recursively pick next bigger numbers until size = k, backtrack to try all possibilities.”
+// If you want even shorter:
+// “Choose → Explore → Unchoose (only forward numbers, no repeats).”
 class Solution {
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> result = new ArrayList<>();
