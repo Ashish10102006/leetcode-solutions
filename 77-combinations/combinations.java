@@ -20,3 +20,13 @@ class Solution {
         }
     }
 }
+// Every backtracking problem ALWAYS has 3 steps:
+// ✔ Choose
+// current.add(i);
+// ✔ Explore
+// backtrack(i + 1);
+// ✔ Undo
+// current.remove(last);
+
+// “start controls valid next choices, and for-loop iterates over all those choices to build combinations recursively.” 
+// “After loop body finishes, control goes to i++, not recursion.”
