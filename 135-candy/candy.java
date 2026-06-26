@@ -16,14 +16,14 @@ class Solution {
         // left to right
         for(int i=1;i<n;i++){
             if(ratings[i]>ratings[i-1]){
-                candies[i]=candies[i-1]+1;
+                candies[i]=candies[i-1]+1; //“We enforce a rule: this child must have at least one more than neighbor”
             }
         }
 
         // right to left
         for(int i=n-2;i>=0;i--){
             if (ratings[i] > ratings[i + 1]) {
-            candies[i] = Math.max(candies[i], candies[i + 1] + 1);
+            candies[i] = Math.max(candies[i], candies[i + 1] + 1);//“We enforce a rule: this child must have at least one more than neighbor”
             }
         }
         int sum = 0;
