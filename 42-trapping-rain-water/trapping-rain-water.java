@@ -33,3 +33,13 @@ class Solution {
 
     }
 }
+
+
+// ⚡ Alternative approach (also valid but not best)
+// 1. Prefix + Suffix arrays (easy to understand)
+// leftMax[]=>leftMax[i] = tallest bar from 0  i
+// rightMax[]=>rightMax[i] = tallest bar from end  → 0
+// water[i] = min(leftMax[i], rightMax[i]) - height[i]
+
+// But:
+// ❌ extra space O(n)
