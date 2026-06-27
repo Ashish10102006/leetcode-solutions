@@ -11,6 +11,7 @@ To strengthen problem-solving skills and prepare for technical interviews throug
 ## Array
 |  |
 | ------- |
+| [0036-valid-sudoku](https://github.com/Ashish10102006/leetcode-solutions/tree/master/0036-valid-sudoku) |
 | [0048-rotate-image](https://github.com/Ashish10102006/leetcode-solutions/tree/master/0048-rotate-image) |
 ## Math
 |  |
@@ -19,5 +20,10 @@ To strengthen problem-solving skills and prepare for technical interviews throug
 ## Matrix
 |  |
 | ------- |
+| [0036-valid-sudoku](https://github.com/Ashish10102006/leetcode-solutions/tree/master/0036-valid-sudoku) |
 | [0048-rotate-image](https://github.com/Ashish10102006/leetcode-solutions/tree/master/0048-rotate-image) |
+## Hash Table
+|  |
+| ------- |
+| [0036-valid-sudoku](https://github.com/Ashish10102006/leetcode-solutions/tree/master/0036-valid-sudoku) |
 <!---LeetCode Topics End-->
