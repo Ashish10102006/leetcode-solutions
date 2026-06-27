@@ -1,3 +1,7 @@
+// Greedy + Simulation
+
+// Greedy → pack as many words as possible per line (don't backtrack)
+// Simulation → manually build each line exactly as the problem describes
 class Solution {
     public List<String> fullJustify(String[] words, int maxWidth) {
         List<String> result =new ArrayList<>();
@@ -31,7 +35,7 @@ class Solution {
         for (int k = i; k < j; k++) {
             s.append(words[k]);
 
-            if (k == j - 1) continue;
+            if (k == j - 1) continue;//if this is the last word in the line, skip adding spaces after it.
 
             for (int space = 1; space <= eachWordSpace; space++)
                 s.append(" ");
