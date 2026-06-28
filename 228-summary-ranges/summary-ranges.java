@@ -9,7 +9,7 @@ class Solution {
 
             int end=nums[i];
 
-            if(start==nums[i]) ans.add(String.valueOf(start));
+            if(start==end) ans.add(String.valueOf(start));
 
             else ans.add(start + "->" + end);
             
