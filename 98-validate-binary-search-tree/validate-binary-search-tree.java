@@ -28,3 +28,4 @@ class Solution {
     }
 
 }
+// Every node must lie within its allowed range. If even one node is outside that range, the tree is not a valid BST.
