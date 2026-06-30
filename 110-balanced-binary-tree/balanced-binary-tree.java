@@ -13,6 +13,9 @@
  *     }
  * }
  */
+
+
+// A tree is balanced if, at every node, the difference between the left and right subtree heights is at most 1.
 class Solution {
     public boolean isBalanced(TreeNode root) {
         if (root==null)return true;
