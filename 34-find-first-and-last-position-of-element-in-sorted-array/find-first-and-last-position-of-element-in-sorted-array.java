@@ -1,3 +1,4 @@
+// Use Binary Search twice—once to find the first occurrence and once to find the last occurrence.
 class Solution {
     public int[] searchRange(int[] nums, int target) {
         if(nums.length==0) return new int[]{-1,-1};
