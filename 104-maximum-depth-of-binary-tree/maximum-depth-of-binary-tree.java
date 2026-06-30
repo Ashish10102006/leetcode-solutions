@@ -13,6 +13,8 @@
  *     }
  * }
  */
+
+ // Ask both children for their depth, take the larger one, and add 1 (for the current node).
 class Solution {
     public int maxDepth(TreeNode root) {
         if (root==null)
