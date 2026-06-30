@@ -1,11 +1,19 @@
-import java.util.PriorityQueue;
+// Keep a min heap of size k, always remove smallest when size exceeds k.
+// Keep only the K largest elements in a min heap.
 class Solution {
     public int findKthLargest(int[] nums, int k) {
-        PriorityQueue<Integer> pq =new PriorityQueue<>();
-        for(int num:nums){
-            pq.add(num);
-            if(pq.size()>k)pq.poll();
+        PriorityQueue<Integer> minheap =new  PriorityQueue<>();
+
+        for(int i=0;i<k;i++){
+            minheap.add(nums[i]);
         }
-        return pq.peek();
+
+        for(int i=k;i<nums.length;i++){
+            if(nums[i]>minheap.peek()){
+                minheap.poll();
+                minheap.add(nums[i]);
+            }
+        }
+        return minheap.poll();
     }
 }
