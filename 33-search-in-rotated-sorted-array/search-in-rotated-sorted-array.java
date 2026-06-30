@@ -1,3 +1,9 @@
+// First detect sorted half, then check if target lies in that half — otherwise go to the other half.
+// 🧠 Core Idea
+// Even though the array is rotated:
+// At every step, one half (left or right) is always sorted
+// So we use that to decide where the target can exist.
+
 class Solution {
     public int search(int[] nums, int target) {
 
