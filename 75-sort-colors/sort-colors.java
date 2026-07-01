@@ -1,3 +1,4 @@
+// Three pointers approch
 class Solution {
     public static void swap(int ar[],int a,int b){
         int temp=ar[a];
@@ -15,19 +16,24 @@ class Solution {
         // while(zeros-- > 0) nums[i++]= 0;
         // while(ones-- >0) nums[i++]= 1;
         // while(second-- >0) nums[i++]= 2;
-        int low = 0, i = 0, high = nums.length - 1;
+        int low = 0, mid = 0, high = nums.length - 1;
 
-        while(i <= high) {
-            if(nums[i] == 0) {
-                swap(nums, i, low);
-                i++;
+        while(mid <= high) {
+            if(nums[mid] == 0) {
+                swap(nums, mid, low);
+                mid++;
                 low++;
-            } else if(nums[i] == 2) {
-                swap(nums, i, high);
+            } else if(nums[mid] == 2) {
+                swap(nums, mid, high);
                 high--; // do not increase i
             } else { // nums[i] == 1
-                i++;
+                mid++;
             }
         }
     }
 }
+
+// Memory trick:
+// 0 → move left (low++, mid++)
+// 1 → stay in middle (mid++)
+// 2 → move right (high--, don't move mid)
