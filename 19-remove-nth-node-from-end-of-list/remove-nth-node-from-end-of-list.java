@@ -31,9 +31,7 @@ temp = head;
 for(int i = 1; i < length - n; i++){
     temp = temp.next;
 }
-
 temp.next = temp.next.next;
-
 return head;
     }
 }
