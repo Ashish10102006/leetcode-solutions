@@ -1,3 +1,11 @@
+// Left → Right
+// Extra ')' is bad.
+// right > left → Reset
+
+// Right → Left
+// Extra '(' is bad.
+// left > right → Reset
+
 class Solution {
     public int longestValidParentheses(String s) {
         int left = 0;
