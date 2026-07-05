@@ -1,50 +1,82 @@
-// Left → Right
-// Extra ')' is bad.
-// right > left → Reset
+// // Left → Right
+// // Extra ')' is bad.
+// // right > left → Reset
 
-// Right → Left
-// Extra '(' is bad.
-// left > right → Reset
+// // Right → Left
+// // Extra '(' is bad.
+// // left > right → Reset
 
+// class Solution {
+//     public int longestValidParentheses(String s) {
+//         int left = 0;
+//         int right = 0;
+//         int max = 0;
+
+//         // Left to Right
+//         for (int i = 0; i < s.length(); i++) {
+//             if (s.charAt(i) == '(') {
+//                 left++;
+//             } else {
+//                 right++;
+//             }
+
+//             if (left == right) {
+//                 max = Math.max(max, 2 * right);
+//             } else if (right > left) {
+//                 left = 0;
+//                 right = 0;
+//             }
+//         }
+
+//         // Reset counters
+//         left = 0;
+//         right = 0;
+
+//         // Right to Left
+//         for (int i = s.length() - 1; i >= 0; i--) {
+//             if (s.charAt(i) == '(') {
+//                 left++;
+//             } else {
+//                 right++;
+//             }
+
+//             if (left == right) {
+//                 max = Math.max(max, 2 * left);
+//             } else if (left > right) {
+//                 left = 0;
+//                 right = 0;
+//             }
+//         }
+
+//         return max;
+//     }
+// }
 class Solution {
     public int longestValidParentheses(String s) {
-        int left = 0;
-        int right = 0;
+        Stack<Integer> stack = new Stack<>();
+
+        // Boundary before the string starts
+        stack.push(-1);
+
         int max = 0;
 
-        // Left to Right
         for (int i = 0; i < s.length(); i++) {
+
             if (s.charAt(i) == '(') {
-                left++;
+                // Store the index of '('
+                stack.push(i);
             } else {
-                right++;
-            }
+                // Try to match this ')'
+                stack.pop();
 
-            if (left == right) {
-                max = Math.max(max, 2 * right);
-            } else if (right > left) {
-                left = 0;
-                right = 0;
-            }
-        }
-
-        // Reset counters
-        left = 0;
-        right = 0;
-
-        // Right to Left
-        for (int i = s.length() - 1; i >= 0; i--) {
-            if (s.charAt(i) == '(') {
-                left++;
-            } else {
-                right++;
-            }
-
-            if (left == right) {
-                max = Math.max(max, 2 * left);
-            } else if (left > right) {
-                left = 0;
-                right = 0;
+                if (stack.isEmpty()) {
+                    // Unmatched ')'
+                    // This becomes the new boundary
+                    stack.push(i);
+                } else {
+                    // Current valid substring length
+                    max = Math.max(max, i - stack.peek());
+                }
             }
         }
 
