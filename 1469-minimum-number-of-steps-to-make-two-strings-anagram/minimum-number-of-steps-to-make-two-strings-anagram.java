@@ -1,5 +1,6 @@
 //Frequency map → Count shortages → Shortages = Minimum replacements
 
+/*
 class Solution {
     public int minSteps(String s, String t) {
         Map<Character,Integer> map1= new HashMap<>();
@@ -21,5 +22,26 @@ class Solution {
         }
         return missing;
 
+    }
+} //problem=taking too much space;
+*/
+class Solution {
+    public int minSteps(String s, String t) {
+        int[] freq = new int[26];
+
+        for (char ch : s.toCharArray())
+            freq[ch - 'a']++;
+
+        for (char ch : t.toCharArray())
+            freq[ch - 'a']--;
+
+        int ans = 0;
+
+        for (int x : freq) {
+            if (x > 0)
+                ans += x;
+        }
+
+        return ans;
     }
 }
