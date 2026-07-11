@@ -1,3 +1,4 @@
+/*
 class Solution {
     public int countCharacters(String[] words, String chars) {
         Map<Character,Integer> frequency = new HashMap<>();
@@ -27,5 +28,43 @@ class Solution {
             }
         }
         return length;
+    }
+}
+*/
+
+// 2nd approch optimal solution
+
+class Solution {
+    public int countCharacters(String[] words, String chars) {
+        int[] freq = new int[26];
+
+        for (char c : chars.toCharArray()) {
+            freq[c - 'a']++;
+        }
+
+        int ans = 0;
+
+        for (String word : words) {
+            int[] count = new int[26];
+
+            for (char c : word.toCharArray()) {
+                count[c - 'a']++;
+            }
+
+            boolean possible = true;
+
+            for (int i = 0; i < 26; i++) {
+                if (count[i] > freq[i]) {
+                    possible = false;
+                    break;
+                }
+            }
+
+            if (possible) {
+                ans += word.length();
+            }
+        }
+
+        return ans;
     }
 }
