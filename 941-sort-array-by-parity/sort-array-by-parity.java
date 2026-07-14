@@ -17,3 +17,8 @@ class Solution {
         nums[j]=temp;
         }
 }
+
+// You maintain two pointers:
+
+// i → points to the last position where an even number has been placed.
+// j → scans the array from left to right.
