@@ -29,3 +29,12 @@ class Solution {
 // for i = left to right
 //     if directions[i] != 'S'
 //         answer++
+
+
+// So:
+
+// R → contributes 1
+// L → contributes 1
+// S → contributes 0 (it is already stopped)
+
+// That's why we count only the moving cars.
