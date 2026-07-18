@@ -1,3 +1,4 @@
+// For every 0, add currentIndex - targetIndex (i - left) because that is the minimum number of adjacent swaps needed to move it to its correct position on the left.
 class Solution {
     public long minimumSteps(String s) {
         int left=0;
