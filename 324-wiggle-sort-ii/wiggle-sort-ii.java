@@ -140,3 +140,12 @@ class Solution {
         nums[j] = temp;
     }
 }
+
+// If an interviewer asks:
+// "Why is your O(n) solution slower than O(n log n)?"
+
+// Big-O shows how an algorithm scales as the input size grows, not the actual runtime. Arrays.sort() is highly optimized in Java, while the O(n) solution does extra work like QuickSelect, partitioning, virtual indexing, and more swaps. Because of this extra overhead, the O(n) solution can be slower on small or medium inputs, even though it has a better time complexity.
+
+// One-line note
+
+// Better time complexity ≠ always faster runtime. Constant factors and implementation overhead also matter.
