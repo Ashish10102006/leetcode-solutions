@@ -13,6 +13,8 @@
  *     }
  * }
  */
+
+/*
 class Solution {
     public int countNodes(TreeNode root) {
         List<Integer> ans=new ArrayList<>();
@@ -25,5 +27,16 @@ class Solution {
         ans.add(node.val);
         preoerderTraversal(node.left,ans);
         preoerderTraversal(node.right,ans);
+    }
+}
+*/
+
+class Solution {
+    public int countNodes(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        return 1 + countNodes(root.left) + countNodes(root.right);
     }
 }
