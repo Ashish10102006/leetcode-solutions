@@ -18,30 +18,30 @@
 //         return sum;
 //     }
 // }
-class Solution {
-    public int getNext(int n){
-        int sum = 0;
-        while(n != 0){
-            int digit = n % 10;
-            n = n / 10;
+import java.util.HashSet;
 
-            sum += Math.pow(digit,2);
+class Solution {
+    public boolean isHappy(int n) {
+        HashSet<Integer> seen = new HashSet<>();
+
+        while (n != 1 && !seen.contains(n)) {
+            seen.add(n);
+            n = getNext(n);
         }
-        return sum;
+
+        return n == 1;
     }
 
-    public boolean isHappy(int n) {
-        HashMap<Integer,Integer> map = new HashMap<>();
+    private int getNext(int n) {
+        int sum = 0;
 
-        while(true){
-            //add element to map
-            map.put(n,0);
-            n = getNext(n); //update next
-
-            //now check whether n is in map or n is 1 
-            if(n == 1)  return true;
-            if(map.containsKey(n))  return false;
+        while (n > 0) {
+            int digit = n % 10;      // Last digit
+            sum += digit * digit;    // Square and add
+            n /= 10;                 // Remove last digit
         }
-    }   
+
+        return sum;
+    }
 }
 // Keep generating the sum of squares of digits. If you reach 1, it's happy. If a number repeats, you're in a cycle, so it's not happy.
