@@ -56,3 +56,5 @@ class Solution {
         return new ArrayList<>(map.values());
     }
 }
+// For Group Anagrams, the key idea is:
+// 👉 Two words are anagrams if their sorted characters are the same.
