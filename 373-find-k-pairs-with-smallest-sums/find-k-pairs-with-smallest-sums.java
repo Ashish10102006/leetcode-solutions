@@ -54,3 +54,85 @@ class Solution {
         return ans;
     }
 }
+/*
+Example
+nums1 = [1, 7, 11]
+nums2 = [2, 4, 6]
+Row 1: (1,2)  (1,4)  (1,6)
+        3      5      7
+
+Row 2: (7,2)  (7,4)  (7,6)
+        9     11     13
+
+Row 3: (11,2) (11,4) (11,6)
+        13    15     17
+
+Now I ask you:
+
+What is the first person standing in each queue?
+
+Answer:
+
+(1,2)
+(7,2)
+(11,2)
+
+These are the only people who can come out first.
+
+So we put them into the heap.
+
+Now suppose the heap removes:
+
+(1,2)
+
+What is now standing at the front of Row 1?
+
+(1,4)
+
+So we put only (1,4) into the heap.
+
+Now the heap contains
+
+(1,4)
+(7,2)
+(11,2)
+
+Now suppose the heap removes
+
+(1,4)
+
+Who is now at the front of Row 1?
+
+(1,6)
+
+So we insert
+
+(1,6)
+Why don't we insert all three?
+
+Suppose initially you inserted
+
+(1,2)
+(1,4)
+(1,6)
+
+Can (1,6) ever be chosen before (1,4)?
+
+No.
+
+Can (1,4) ever be chosen before (1,2)?
+
+No.
+
+Because
+
+3 < 5 < 7
+
+So (1,4) and (1,6) are just waiting unnecessarily.
+
+That's why we insert them only when they reach the front.
+
+One sentence to remember
+
+The heap always stores only the current smallest unused pair from each row.        
+*/
