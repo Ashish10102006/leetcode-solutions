@@ -134,5 +134,29 @@ That's why we insert them only when they reach the front.
 
 One sentence to remember
 
-The heap always stores only the current smallest unused pair from each row.        
+The heap always stores only the current smallest unused pair from each row.   
+
+Why don't we increase i?
+
+Because every row is already in the heap.
+
+Initially:
+
+Row 0 → (1,2)
+Row 1 → (7,2)
+Row 2 → (11,2)
+
+Each row already has one representative.
+
+When Row 0's representative is removed, we replace it with the next pair from the same row.
+
+That's why we do:
+
+pq.offer(new int[]{i, j + 1});
+
+and not
+
+pq.offer(new int[]{i + 1, j});
+
+because Row i + 1 is already represented.
 */
