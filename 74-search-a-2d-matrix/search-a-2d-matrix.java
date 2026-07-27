@@ -19,3 +19,9 @@ class Solution {
         return false;
     }
 }
+// mid represents the index of the middle element in the imaginary flattened 1D sorted array. Since the matrix is physically stored as a 2D array, convert this index into its actual position using:
+
+// row = mid / n (divide by the number of columns)
+// col = mid % n (remainder gives the column)
+
+// Then access the element as matrix[row][col] and continue the binary search.
