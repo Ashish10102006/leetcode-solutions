@@ -1,3 +1,15 @@
+/*
+Whenever you read a problem, mentally check these five boxes:
+
+□ Maximum / Minimum / Ways?
+□ Choice at each step?
+□ Current choice affects future?
+□ Smaller version of same problem?
+□ Repeated work if recursive?
+
+If you tick 4 or 5 boxes, you should seriously consider Dynamic Programming.
+*/
+
 class Solution {
     public int rob(int[] nums) {
 
@@ -12,7 +24,7 @@ class Solution {
         for(int i=2;i<nums.length;i++){
             dp[i] = Math.max( nums[i]+dp[i-2] , dp[i-1] );
         }
-        
+
         return dp[nums.length-1];
     }
 }
