@@ -67,6 +67,7 @@ How many ways can I make 3 using [1,2,5]?
 */
 
 //3rd way optimal 1d array
+// For every coin, we check all the amounts that this coin can contribute to, and we update the number of ways to make those amounts.
 class Solution {
     public int change(int amount, int[] coins) {
         if(amount==0) return 1;
@@ -76,6 +77,8 @@ class Solution {
         for (int coin : coins) {
             for (int j = coin; j <= amount; j++) {
                 dp[j] += dp[j - coin];
+                // Why +=?  
+                //Because we are finding a new way. We don't want to erase the old ways.
             }
         }
         return dp[n-1];
