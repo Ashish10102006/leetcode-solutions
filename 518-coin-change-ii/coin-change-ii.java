@@ -31,6 +31,7 @@ class Solution {
 
 // 2nd way memoization 
 
+/*
 class Solution {
     public int change(int amount, int[] coins) {
          Integer[][] dp = new Integer[coins.length][amount + 1];
@@ -52,7 +53,7 @@ class Solution {
         }
 }
 
-
+*/
 
 /*
 count(index, amount)
@@ -64,3 +65,19 @@ count(0,3)
 means
 How many ways can I make 3 using [1,2,5]?
 */
+
+//3rd way optimal 1d array
+class Solution {
+    public int change(int amount, int[] coins) {
+        if(amount==0) return 1;
+        int n=amount+1;
+        int[] dp=new int[n];
+        dp[0]=1;
+        for (int coin : coins) {
+            for (int j = coin; j <= amount; j++) {
+                dp[j] += dp[j - coin];
+            }
+        }
+        return dp[n-1];
+    }
+}
