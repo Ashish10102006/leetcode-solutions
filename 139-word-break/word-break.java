@@ -33,3 +33,22 @@ class Solution {
 //Segmented means split into smaller parts.
 // For this problem, it means:
 // Split the string into one or more words, where every word exists in wordDict.
+/*
+-----------------|----------------
+ First Part      |   Last Word
+-----------------|----------------
+      dp[j]      | substring(j,i)
+-----------------|----------------
+For the whole string to be valid:
+
+✅ The first part must already be valid (dp[j]).
+✅ The last part must be a dictionary word.
+
+If both are true:
+
+dp[i] = true;
+
+if (dp[j] && wordSet.contains(s.substring(j, i)))
+means:
+If the first j characters can already be segmented, and the remaining characters from j to i form a dictionary word, then the first i characters can also be segmented.
+*/
