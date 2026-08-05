@@ -39,14 +39,17 @@ class Solution {
             return dp[index][target];
         }
 
-        // Take the current element
-        boolean take = solve(nums, index + 1, target - nums[index], dp);
+        // // Take the current element
+        // boolean take = solve(nums, index + 1, target - nums[index], dp);
 
-        // Skip the current element
-        boolean skip = solve(nums, index + 1, target, dp);
+        // // Skip the current element
+        // boolean skip = solve(nums, index + 1, target, dp);
 
-        // Store the answer
-        dp[index][target] = take || skip;
+        // // Store the answer
+        // dp[index][target] = take || skip;
+
+        dp[index][target] = solve(nums, index + 1, target - nums[index], dp) ||
+                     solve(nums, index + 1, target, dp);
 
         return dp[index][target];
     }
