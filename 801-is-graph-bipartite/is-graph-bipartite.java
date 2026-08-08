@@ -14,6 +14,13 @@ class Solution {
             if (color[i] != 0) {
                 continue;
             }
+            // for every node:
+            //   if already visited:
+            //       skip it
+
+            //   otherwise:
+            //       start BFS
+
 
             // Start a new component
             color[i] = 1;
