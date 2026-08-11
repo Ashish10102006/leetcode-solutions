@@ -6,14 +6,10 @@ class Solution {
 
         Stack<Integer> stack = new Stack<>();
 
-        for (int i = 0; i < s.length(); i++){
+        for(char c:s.toCharArray()){
 
-             char c = s.charAt(i);
-
-            // Build number
-            if (Character.isDigit(c)) {
-                number = number * 10 + (c - '0');
-            }
+            if(Character.isDigit(c))
+                number=number*10+(c-'0');
 
             // When we see +
             else if(c=='+'){
