@@ -36,3 +36,17 @@ class Solution {
         return root;
     }
 }
+/*
+The core idea is:
+
+Preorder: Root → Left → Right
+Inorder: Left → Root → Right
+
+So:
+
+Take the current element from preorder → that's the root.
+Find that root in inorder.
+Everything left of it in inorder = left subtree.
+Everything right of it = right subtree.
+Recursively repeat.
+*/
