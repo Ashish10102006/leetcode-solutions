@@ -37,3 +37,21 @@ class Solution {
         return root;
     } 
 }
+/*
+POSTORDER
+
+[ LEFT SUBTREE ][ RIGHT SUBTREE ][ ROOT ]
+       N nodes
+       ↑
+   numsLeft
+
+If LEFT has N nodes:
+
+LEFT:
+start = postStart
+end   = postStart + N - 1
+
+RIGHT:
+start = postStart + N
+end   = postEnd - 1
+*/
