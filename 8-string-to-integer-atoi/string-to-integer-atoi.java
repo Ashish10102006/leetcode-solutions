@@ -75,44 +75,27 @@ class Solution {
 
 class Solution {
     public int myAtoi(String s) {
+        s = s.trim(); // Remove leading whitespace
+        int sign = 1, i = 0;
+        long res = 0; // Using long to handle overflow cases
 
-        s = s.trim();
+        if (s.length() == 0) return 0;
 
-        if (s.isEmpty()) {
-            return 0;
-        }
+        // Check for sign
+        if (s.charAt(0) == '-') { sign = -1; i++; }
+        else if (s.charAt(0) == '+') { i++; }
 
-        int i = 0;
-        int sign = 1;
-        long num = 0;
+        // Process numerical characters
+        while (i < s.length()) {
+            char ch = s.charAt(i);
+            if (ch < '0' || ch > '9') break; // Stop at non-numeric character
 
-        // Sign
-        if (s.charAt(i) == '+' || s.charAt(i) == '-') {
-            sign = (s.charAt(i) == '-') ? -1 : 1;
+            res = res * 10 + (ch - '0'); // Convert char to number
+            if (sign * res > Integer.MAX_VALUE) return Integer.MAX_VALUE; // Handle overflow
+            if (sign * res < Integer.MIN_VALUE) return Integer.MIN_VALUE;
+
             i++;
         }
-
-        // Limit depends on sign
-        long limit = (sign == 1)
-                ? Integer.MAX_VALUE
-                : -(long) Integer.MIN_VALUE;
-
-        // Read digits
-        while (i < s.length() && Character.isDigit(s.charAt(i))) {
-
-            int digit = s.charAt(i) - '0';
-
-            // Overflow check
-            if (num > (limit - digit) / 10) {
-                return sign == 1
-                        ? Integer.MAX_VALUE
-                        : Integer.MIN_VALUE;
-            }
-
-            num = num * 10 + digit;
-            i++;
-        }
-
-        return (int) (num * sign);
+        return (int) (sign * res);
     }
 }
