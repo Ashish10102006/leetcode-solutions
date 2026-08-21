@@ -32,3 +32,10 @@ class Solution {
         return result;
     }
 }
+/*
+current value × 5/1
+current value × 4/2
+current value × 3/3
+current value × 2/4
+current value × 1/5
+*/
