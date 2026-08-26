@@ -1,3 +1,4 @@
+/*
 class Solution {
     public String shortestBeautifulSubstring(String s, int k) {
         Set<String> set = new HashSet<>();
@@ -25,6 +26,8 @@ class Solution {
 
     }
 }
+*/
+
 /*
 The question is asking:
 
@@ -36,3 +39,40 @@ str.compareTo(ans) < 0  → str is smaller
 str.compareTo(ans) == 0 → both are equal
 str.compareTo(ans) > 0  → str is larger
 */
+
+class Solution {
+    public String shortestBeautifulSubstring(String s, int k) {
+
+        int n = s.length();
+        String ans = "";
+
+        for (int i = 0; i < n; i++) {
+
+            int count = 0;
+
+            for (int j = i; j < n; j++) {
+
+                if (s.charAt(j) == '1') {
+                    count++;
+                }
+
+                if (count == k) {
+
+                    String sub = s.substring(i, j + 1);
+
+                    if (ans.equals("") ||
+                        sub.length() < ans.length() ||
+                        (sub.length() == ans.length() &&
+                         sub.compareTo(ans) < 0)) {
+
+                        ans = sub;
+                    }
+
+                    break;
+                }
+            }
+        }
+
+        return ans;
+    }
+}
