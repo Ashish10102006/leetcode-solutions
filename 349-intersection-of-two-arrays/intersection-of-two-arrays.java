@@ -1,3 +1,4 @@
+/*
 class Solution {
     public int[] intersection(int[] nums1, int[] nums2) {
         Arrays.sort(nums1);
@@ -24,5 +25,30 @@ class Solution {
             ans[k++]=no;
         }
         return ans;
+    }
+}
+*/
+import java.util.*;
+
+class Solution {
+    public int[] intersection(int[] nums1, int[] nums2) {
+        Set<Integer> set1 = new HashSet<>();
+        for (int n : nums1) {
+            set1.add(n);
+        }
+        Set<Integer> result = new HashSet<>();
+        for (int n : nums2) {
+            if (set1.contains(n)) {
+                result.add(n);
+            }
+        }
+        int[] arr = new int[result.size()];
+        int i = 0;
+
+        for (int v : result) {
+            arr[i] = v;
+            i++;
+        }
+        return arr;
     }
 }
