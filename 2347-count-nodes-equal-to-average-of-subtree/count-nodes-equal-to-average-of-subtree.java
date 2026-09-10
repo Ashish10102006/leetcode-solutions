@@ -45,6 +45,10 @@ class Solution {
 }
 
 /*
+
+// Every node creates/returns one 2-element array containing the information calculated for that node's entire subtree.
+
+
 left[0] → sum of left subtree
 left[1] → number of nodes in left subtree
 right[0] → sum of right subtree
