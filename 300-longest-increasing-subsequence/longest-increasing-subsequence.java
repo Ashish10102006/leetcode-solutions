@@ -1,3 +1,4 @@
+/*
 class Solution {
     public int lengthOfLIS(int[] nums) {
         int n=nums.length;
@@ -17,7 +18,41 @@ class Solution {
 
     }
 }
-/*
+
 // Meaning of dp
 dp[i] = Length of the Longest Increasing Subsequence ending at index i;
 */
+
+class Solution {
+    public int lengthOfLIS(int[] nums) {
+
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < nums.length; i++) {
+
+            if (list.isEmpty() || list.get(list.size() - 1) < nums[i]) {
+                list.add(nums[i]);
+            }
+            else {
+                int left = 0;
+                int right = list.size() - 1;
+
+                while (left < right) {
+
+                    int mid = left + (right - left) / 2;
+
+                    if (list.get(mid) < nums[i]) {
+                        left = mid + 1;
+                    }
+                    else {
+                        right = mid;
+                    }
+                }
+
+                list.set(left, nums[i]);
+            }
+        }
+
+        return list.size();
+    }
+}
