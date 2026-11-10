@@ -14,7 +14,9 @@ class Solution {
         }
 
         for(int i=1;i<dp.length;i++){
-            for (int j = i - 1; j >= Math.max(0, i - maxLen); j--){
+            for (int j = i - 1; j >= Math.max(0, i - maxLen); j--)
+            // "Is the previous part already valid AND is the next word present in the dictionary?"
+            {
                 if (dp[j] && set.contains(s.substring(j, i))) {
                     dp[i] = true;
                     break;
