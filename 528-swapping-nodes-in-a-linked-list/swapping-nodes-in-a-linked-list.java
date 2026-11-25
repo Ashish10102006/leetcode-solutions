@@ -62,4 +62,9 @@ To find back postition:-
 Remember:
 - 0-based indexing: n - k
 - 1-based indexing: n - k + 1
+
+2nd - Two-Pointer Technique (Fast and Slow Pointers) approch
+1. Move fast to the kth node.
+2. Keep slow at the head (1st node).
+3. Move both pointers forward until fast reaches the last node.
 */
