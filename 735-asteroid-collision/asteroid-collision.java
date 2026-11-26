@@ -1,42 +1,40 @@
+
+import java.util.*;
+
 class Solution {
     public int[] asteroidCollision(int[] asteroids) {
-        Stack<Integer> stack = new Stack<>();
 
-        for (int asteroid : asteroids) {
+        Stack<Integer> st = new Stack<>();
 
-            // Right-moving asteroid
-            if (asteroid > 0) {
-                stack.push(asteroid);
-            } 
-            // Left-moving asteroid
+        for (int a : asteroids) {
+
+            if (a > 0) {
+                st.push(a);
+            }
             else {
-                while (!stack.isEmpty() && stack.peek() > 0 && stack.peek() < -asteroid) {
-                    stack.pop();
+
+                while (!st.isEmpty() &&
+                       st.peek() > 0 &&
+                       st.peek() < Math.abs(a)) {
+
+                    st.pop();
                 }
 
-                if (!stack.isEmpty() && stack.peek() == -asteroid) {
-                    stack.pop(); // Both explode
-                } 
-                else if (stack.isEmpty() || stack.peek() < 0) {
-                    stack.push(asteroid); // Current asteroid survives
+                if (!st.isEmpty() && st.peek() == Math.abs(a)) {
+                    st.pop();
                 }
-                // Else: stack.peek() > -asteroid
-                // Current asteroid explodes, so do nothing
+                else if (st.isEmpty() || st.peek() < 0) {
+                    st.push(a);
+                }
             }
         }
 
-        int[] ans = new int[stack.size()];
+        int[] result = new int[st.size()];
 
-        for (int i = stack.size() - 1; i >= 0; i--) {
-            ans[i] = stack.pop();
+        for (int i = result.length - 1; i >= 0; i--) {
+            result[i] = st.pop();
         }
 
-        return ans;
+        return result;
     }
 }
-// Remember these 3 checks in order
-// Smaller positive? → Pop it.
-// Equal size? → Pop it (both explode).
-// No positive left? (stack empty or top is negative) → Push the current asteroid.
-
-// If none of these are true, the current asteroid is destroyed and you simply move to the next asteroid.
